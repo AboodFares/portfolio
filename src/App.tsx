@@ -16,7 +16,7 @@ const OPEN_SOURCE = [
   },
 ]
 
-const PROJECTS = [
+const PROJECTS: { name: string; year: string; story: string; stack: string[]; live?: string; github?: string }[] = [
   {
     name: 'Jarvis',
     year: '2026',
