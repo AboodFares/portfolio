@@ -3,6 +3,18 @@ const VIDEO_URL =
 
 const OPEN_SOURCE = [
   {
+    org: 'Shopify Hydrogen',
+    date: 'July 2026 – Present',
+    what: 'Diagnosed an optimistic-cart flicker where add-to-cart lines dropped their option names before the server responded. Added selectedOptions to buildAddToCartDetail with unit tests — PR #3854, fixing issue #3853.',
+    link: 'https://github.com/Shopify/hydrogen/pull/3854',
+  },
+  {
+    org: 'Pipecat',
+    date: 'July 2026',
+    what: 'Malformed thought blocks were crashing live voice agents mid-conversation. I root-caused issue #4992, fixed both the adapter and the aggregator with tests, and shipped PR #5032 — which prompted a maintainer-authored upstream fix.',
+    link: 'https://github.com/pipecat-ai/pipecat/pull/5032',
+  },
+  {
     org: 'Google Error Prone',
     date: 'May 2026',
     what: 'Identified a false negative where unused parameters were silently ignored in method references. Fixed by removing incorrect suppression in visitMemberReference and guarding fix generation for method reference cases.',
@@ -31,6 +43,13 @@ const PROJECTS: { name: string; year: string; story: string; stack: string[]; li
     story:
       "A full-stack Solana wallet and token locking platform. I wrote an Anchor smart contract in Rust with PDA vaults that enforce time- and price-based unlock conditions — then built a Chrome extension on top of it with a portfolio view, send flow, and activity feed.",
     stack: ['React', 'TypeScript', 'Rust', 'Anchor', 'Solana', 'Supabase'],
+  },
+  {
+    name: 'Cache',
+    year: '2026',
+    story:
+      "A content-addressable cache that hashes every file with SHA-256, so duplicate downloads dedupe to one copy on disk and never get fetched twice. A Manifest V3 Chrome extension and a launchd daemon intercept downloads; a SQLite index handles LRU eviction and HTTP conditional revalidation with ETags. The part I'm proudest of is the self-healing layer — file watching, verify-on-access, and reconciliation keep the index and the disk from ever drifting apart.",
+    stack: ['TypeScript', 'Node.js', 'SQLite', 'Chrome Extension'],
   },
   {
     name: 'Sub Tracker',
@@ -127,10 +146,11 @@ export default function App() {
               I've gone deep on AI integrations and systems programming.
             </p>
             <p>
-              I also contribute to open source. Recently I patched a false
-              negative in Google's Error Prone and fixed two confirmed bugs in
-              Morphe Patches — both through actual debugging, not surface-level
-              contributions.
+              I also contribute to open source. Recently I fixed a cart bug in
+              Shopify's Hydrogen and a crash taking down live voice agents in
+              Pipecat, after patching a false negative in Google's Error Prone
+              and two confirmed bugs in Morphe Patches — all through actual
+              debugging, not surface-level contributions.
             </p>
             <p>
               I'm looking for internship opportunities where I can work on a
